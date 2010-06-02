@@ -1,33 +1,71 @@
-#Problem definition and analysis 
-
 = Introduction =
 
 This page has the description of the problem statement, its elaboration and synthesis. 
 
-= Details =
 
-PROBLEM STATEMENT
+= PROBLEM STATEMENT =
+
 The problem involves entering an image as a query into a software application that is designed to employ CBIR techniques in extracting visual properties, and matching them. This is done to retrieve images in the database that are visually similar to the query image.
 
-PROBLEM ELABORATION
+
+= PROBLEM ELABORATION =
+
+
 Content Based Image Retrieval: It is the retrieval of images based on visual features such as colour, texture and shape. Reasons for its development are that in many large image databases, traditional methods of image indexing have proven to be insufficient, laborious, and extremely time consuming. These old methods of image indexing, ranging from storing an image in the database and associating it with a keyword or number, to associating it with a categorized description, have become obsolete. In CBIR, each image that is stored in the database has its features extracted and compared to the features of the query image. It involves two steps:
+
+
 •	Feature Extraction: The first step in the process is extracting image features to a distinguishable extent.
+
 •	Matching: The second step involves matching these features to yield a result that is visually similar.
+
+
 CBIR draws many of its methods from the field of image processing and computer vision, and is regarded by some as a subset of that field. It differs from these fields principally through its emphasis on the retrieval of images with desired characteristics from a collection of significant size. Image processing covers a much wider field, including image enhancement, compression, transmission, and interpretation.
+
+
 A lot of significant research has already been carried out in this area since the early 1990s. Several techniques have evolved, differing mainly in the application of CBIR.
 One of the early techniques developed for searching images was by indexing the images that are stored in the database. This technique of searching images was also known as keyword-based image search, wherein the images had to be manually annotated with keywords. The limitation inherent in keyword-based systems is that textual information about images requires humans to personally describe or annotate every image in the database. This is impractical for very large databases, or for images that are generated automatically. It is also possible to miss images that use different synonyms in their descriptions or inconsistencies in annotations.
+
+
 Therefore, it became necessary for applications to analyze the actual ‘contents’ of the image to perform a search. The term 'contents' in this context might refer to colors, shapes, textures, or any other information that can be derived from the image itself. Semantic features such as the type of object present in the image are harder to extract, though this remains an active research topic.
-2.	PROBLEM SYNTHESIS
+
+
+
+= PROBLEM SYNTHESIS =
+
+
+
 CBIR differs from classical information retrieval in that image databases are essentially unstructured, since digitized images consist purely of arrays of pixel intensities, with no inherent meaning. One of the key issues with any kind of image processing is the need to extract useful information from the raw data (such as recognizing the presence of particular shapes or textures) before any kind of reasoning about the image’s contents is possible. Image databases thus differ fundamentally from text databases, where the raw material (words stored as ASCII character strings) has already been logically structured by the author.
+
+
 Low-level visual features such as color, texture, shape and spatial relationships are directly related to perceptual aspects of image content. Since it is usually easy to extract and represent these features and fairly convenient to design similarity measures by using the statistical properties of these features, a variety of content-based image retrieval techniques have been proposed.
+
+
 Query by example is a query technique that involves providing the CBIR system with an example image that it will then base its search upon. The underlying search algorithms may vary depending on the application, but result images should all share common elements with the provided example.
+
+
 Options for providing example images to the system include:
-•	A preexisting image may be supplied by the user or chosen from a random set. 
+
+
+•	A preexisting image may be supplied by the user or chosen from a random set.
+ 
+
 •	The user draws a rough approximation of the image they are looking for, for example with blobs of color or general shapes.
 
+
+
 This query technique removes the difficulties that can arise when trying to describe images with words.
+
+
 Thus, in a CBIR system, each image is represented as a vector, which is the feature automatically extracted from the image itself. During the retrieval process, the user may submit an image example as query to the system. After that, the system calculates the similarity between the feature vector of the query and that of each database image, rank images in the descending order of their similarities, and returns images with the highest similarities as the search result.
+
+
 However, those features often do not match human perception very well. Images with similar concepts may have totally different appearance, while images having similar features may be irrelevant to each other at all. This is the so-called semantic gap, which limits the applicability of CBIR techniques.
+
+
 Color is one of the most widely used visual features in content-based image retrieval. It is relatively robust and simple to represent. Various studies of color perception and color spaces have been proposed, in order to find color-based techniques that are more closely aligned with the ways that humans perceive color. The color histogram has been the most commonly used representation technique, statistically describing combined probabilistic properties of the various color channels (such as the Red, Green, and Blue channels), by capturing the number of pixels having particular properties.
+
+
 Shape also is an important feature for perceptual object recognition and classification of images. It has been used in CBIR in conjunction with color and other features such as spatial relationship and texture. In general, shape representations can be categorized as either boundary-based or region-based. A boundary-based representation uses only the outer boundary characteristics of the entities, while a region-based representation uses the entire region.
+
+
 A combination of the above mentioned features are extracted from each image and stored for the purpose of comparison with the features of the query image.
